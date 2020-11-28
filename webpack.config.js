@@ -1,6 +1,9 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+    output: {
+        filename: 'static/js/main.js',
+    },
     module: {
         rules: [
             {
@@ -22,6 +25,9 @@ module.exports = {
                 test: /\.(jpg|png|svg)$/,
                 use: {
                     loader: 'url-loader',
+                    options: {
+                        name: 'static/images/[name].[ext]'
+                    }
                 },
             },
             {
@@ -46,7 +52,7 @@ module.exports = {
                 test: /\.(woff|woff2|ttf|eot)$/,
                 loader: 'file-loader',
                 options: {
-                  name: 'fonts/[name].[ext]!static'
+                    name: 'static/fonts/[name].[ext]'
                 },
                 include: /node_modules/
             }

@@ -53,13 +53,13 @@ class Form extends Component {
         if (steps.length > 1) {
             const stringifiedSteps = steps.reduce((acc, curr) => {
                 const {mode, colors, loop, wait} = curr;
-                acc.push(`${mode}:${colors}:${wait}:${loop}`)
+                acc.push(`${mode}:${encodeURIComponent(colors)}:${wait}:${loop}`)
                 return acc 
             }, [])
             this.apiCall(`steps=${stringifiedSteps.join('|')}`, "Lights are shining")
         } else if(steps.length == 1) {
             const {mode, colors, loop, wait} = steps[0];
-            this.apiCall(`mode=${mode}&colors=${colors}&wait=${wait}&loop=${loop}`,"Lights are shining")
+            this.apiCall(`mode=${mode}&colors=${encodeURIComponent(colors)}&wait=${wait}&loop=${loop}`,"Lights are shining")
         } else {
             console.log("add some steps man...")
         }
@@ -119,6 +119,7 @@ class Form extends Component {
                                     <Range name="brightness"
                                         value={this.state.brightness}
                                         onMouseUp={(event) => this.updateBrightness(event)}
+                                        onTouchEnd={(event) => this.updateBrightness(event)}
                                         />
                                 </div>
                             </ListItem>

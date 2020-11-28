@@ -53,7 +53,7 @@ class ColorPicker extends Component {
                     {colorArray.map((color, idx) => 
                         <span key={`color-${idx}`} 
                             className="notification" 
-                            style={{backgroundColor: color, marginRight: '2px'}}
+                            style={{backgroundColor: color, marginRight: '2px', border: '1px solid #ccc', cursor:'pointer'}}
                             onClick={() => this.removeColor(idx)}
                         >&nbsp;</span>
                     )}

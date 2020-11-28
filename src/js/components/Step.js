@@ -42,10 +42,14 @@ class Step extends Component {
                             <option value="rainbow">Rainbow</option>
                             <option value="solid_rainbow">Solid Rainbow</option>
                             <option value="solid">Solid</option>
+                            <option value="fade">Fade</option>
                             <option value="chase">Chase</option>
+                            <option value="wave">Wave</option>
                             <option value="marquee">Marquee</option>
                             <option value="twinkle">Twinkle</option>
                             <option value="twinkle_adv">Twinkle Fade</option>
+                            <option value="heartbeat">Heartbeat</option>
+                            <option value="creepy">Creepy</option>
                             
                         </Select>
                     </div>
